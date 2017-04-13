@@ -15,7 +15,9 @@ var handlers = {
 
     'GetAnswerIntent': function () {
         this.emit(':tell', 'Here is your answer');
+    },
+    'Unhandled': function () {
+        this.emit(':ask', 'Sorry come again');
     }
 
 };
-
