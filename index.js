@@ -13,8 +13,8 @@ exports.handler = function(event, context, callback){
 
 var handlers = {
 
-    'HelloWorldIntent': function () {
-        this.emit(':tell', 'Hello World!');
+    'GetAnswerIntent': function () {
+        this.emit(':tell', 'Here is your answer');
     }
 
 };
