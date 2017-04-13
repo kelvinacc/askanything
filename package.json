@@ -1,5 +1,5 @@
 {
-  "name": "alexa-sdk",
+  "name": "askanything",
   "version": "1.0.8",
   "description": "Alexa Skill SDK for Node.js",
   "main": "index.js",
@@ -23,12 +23,14 @@
   ],
   "dependencies": {
     "aws-sdk": "^2.4.7",
+    "express": "^4.15.2",
     "i18next": "^3.4.1",
     "i18next-sprintf-postprocessor": "^0.2.2"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

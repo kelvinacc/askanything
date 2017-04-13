@@ -1,6 +1,28 @@
 'use strict';
 
-var Alexa = require('alexa-sdk');
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const restService = express();
+
+restService.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+restService.use(bodyParser.json());
+
+restService.post('/', function (req, res) {
+    
+   console.log("These are the results:" + req.body.result);
+
+});
+
+restService.listen((process.env.PORT || 4200), function () {
+    console.log("Server up and listening");
+});
+
+
+/*var Alexa = require('alexa-sdk');
 var APP_ID = 'amzn1.ask.skill.c39e7281-db47-4729-82dc-be18472ccd65';
 
 exports.handler = function (event, context, callback) {
@@ -20,4 +42,4 @@ var handlers = {
         this.emit(':ask', 'Sorry come again');
     }
 
-};
+};*/
