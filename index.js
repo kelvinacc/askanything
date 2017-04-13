@@ -1,11 +1,11 @@
 'use strict';
 
-var AlexaLambdaHandler = require('./lib/alexa');
-
 var Alexa = require('alexa-sdk');
+var APP_ID = 'amzn1.ask.skill.c39e7281-db47-4729-82dc-be18472ccd65';
 
-exports.handler = function(event, context, callback){
+exports.handler = function (event, context, callback) {
     var alexa = Alexa.handler(event, context);
+    alexa.APP_ID = APP_ID;
     alexa.registerHandlers(handlers);
     alexa.execute();
 };
@@ -18,11 +18,4 @@ var handlers = {
     }
 
 };
-
-
-module.exports.handler = AlexaLambdaHandler.LambdaHandler;
-module.exports.CreateStateHandler = AlexaLambdaHandler.CreateStateHandler;
-module.exports.StateString = AlexaLambdaHandler.StateString;
-
-
 
